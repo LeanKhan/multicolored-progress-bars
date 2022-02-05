@@ -1,0 +1,157 @@
+:root {
+  --grey: #ebebeb;
+  --green: #91cb48;
+  --darker-green: rgb(57 80 27 / 63%);
+  --red: #ee6759;
+  --darker-red: rgb(139 47 38);
+  --whitish: #fafafa;
+  --blue: #68afdc;
+  --darker-blue: rgb(54 92 119);
+  --yellow: #eab549;
+  --darker-yellow: rgb(176 139 56);
+  --bar-height: 25px;
+  --bar-rounded: 28px;
+  --primary: #023020;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: rgb(250 250 250);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.title {
+  color: var(--primary);
+}
+
+.container {
+  padding: 1em;
+  margin: 10px 50px;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+button {
+  border: none;
+  background: grey;
+  color: var(--whitish);
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+/* === progress bar styles === */
+.progress {
+  width: 100%;
+  margin-bottom: 2rem;
+  height: var(--bar-height);
+  position: relative;
+  border-radius: var(--bar-rounded);
+  padding: 1px;
+  background: var(--grey);
+}
+
+.progress-bar {
+  width: 50%;
+  display: block;
+  border: 0.5px solid #c8c8c8;
+  height: var(--bar-height);
+  border-radius: var(--bar-rounded);
+  box-shadow: inset 0px 0.6px 1px 0.2px rgba(255, 255, 255, 0.9),
+    inset 0px -1px 1.4px 0.2px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+
+  /*  label styles  */
+  font-weight: 600;
+  word-spacing: 10px;
+  text-align: right;
+  line-height: var(--bar-height);
+  font-size: 16px;
+  color: rgb(20 24 15 / 0.7);
+  text-shadow: 0px 1px 0.1px rgba(0, 0, 0, 0.3);
+  background-clip: text;
+}
+
+.progress-bar > label {
+  position: relative;
+  z-index: 2;
+}
+
+.progress-bar > .stripes {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-size: 50px 50px;
+  overflow: hidden;
+  border-radius: var(--bar-rounded);
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 5px,
+    rgba(255, 255, 255, 0.1) 5px,
+    rgba(255, 255, 255, 0.1) 10px
+  );
+}
+
+/* === colors === */
+
+/* green */
+.green > .progress-bar {
+  background-color: var(--green);
+  background-image: linear-gradient(
+    to bottom,
+    var(--green) 30%,
+    var(--darker-green) 150%
+  );
+}
+
+/* red */
+.red > .progress-bar {
+  background-color: var(--red);
+  background-image: linear-gradient(
+    to bottom,
+    var(--red) 30%,
+    var(--darker-red) 150%
+  );
+}
+
+/* whitish */
+.white > .progress-bar {
+  background-color: var(--whitish);
+  background-image: linear-gradient(
+    to bottom,
+    var(--whitish) 30%,
+     var(--grey) 150%
+  );
+}
+
+/* blue */
+.blue > .progress-bar {
+  background-color: var(--blue);
+  background-image: linear-gradient(
+    to bottom,
+    var(--blue) 30%,
+    var(--darker-blue) 150%
+  );
+}
+
+/* yellow */
+.yellow > .progress-bar {
+  background-color: var(--yellow);
+  background-image: linear-gradient(
+    to bottom,
+    var(--yellow) 30%,
+    var(--darker-yellow) 150%
+  );
+}
